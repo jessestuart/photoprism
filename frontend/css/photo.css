@@ -1,4 +1,3 @@
-
 .photo-tile {
     cursor: pointer;
 }
@@ -113,7 +112,9 @@
 }
 
 .photo-carousel .photo-img {
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
-    cursor: pointer
+    cursor: pointer;
 }

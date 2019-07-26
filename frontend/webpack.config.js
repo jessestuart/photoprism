@@ -1,8 +1,7 @@
-const path = require('path');
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 const webpack = require('webpack');
+
+const path = require('path');
 
 const PATHS = {
     app: path.join(__dirname, 'src/app.js'),
@@ -36,7 +35,7 @@ const config = {
         },
     },
     plugins: [
-        cssPlugin
+        cssPlugin,
     ],
     node: {
         fs: 'empty',
@@ -77,11 +76,11 @@ const config = {
             {
                 test: /\.css$/,
                 include: /node_modules/,
-                loaders: ['style-loader', 'css-loader']
+                loaders: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader']
+                loaders: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
@@ -103,7 +102,7 @@ const config = {
 };
 
 // No sourcemap for production
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
     const devToolPlugin = new webpack.SourceMapDevToolPlugin({
         filename: '[name].map',
     });
